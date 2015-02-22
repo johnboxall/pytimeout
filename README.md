@@ -1,7 +1,7 @@
-# pyTimeout ⌚
+# pyTimeout
 
 A little experiment at limiting function execution time in the request/response
-cycle of a Python web server using Django and Gunicorn.
+cycle of a Python web server using Django and Gunicorn. ⌚
 
 While working on Django app, I was curious as to whether I could limit the
 execution time of a particular view to ensure it would return before a deadline,
@@ -53,18 +53,20 @@ web apps exhibit poor performance in the face of bad network conditions.
 Included in this project are three functions that may be intermittently be slow
 in bad network conditions:
 
-* `http()` makes an HTTP request to (HTTPBin's)[https://httpbin.org] [`delay`]
+* `http()` makes an HTTP request to [HTTPBin's](https://httpbin.org) `delay`
   endpoint which takes `n` seconds to respond.
 * `cache()` fetchs a key from a Memcached server. Using the Linux traffic control
   tool, [`tc`](http://tldp.org/HOWTO/Traffic-Control-HOWTO/intro.html), We can
   simulate a wide range of poor network conditions that kill the performance of
   this seemingly harmless function.
+  
   ```shell
   # Add 100ms delay to localhost routing. Don't use this on Prod kids.
   tc qdisc add dev lo root handle 1:0 netem delay 100msec
   # Reset it!
   tc qdisc del dev lo root
   ```
+  
 * `db()` executes a simple database query against a MySQL server. Again, with
   traffic control, we can create network conditions which play havoc with the
   execution time of this function.
