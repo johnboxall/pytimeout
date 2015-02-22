@@ -1,0 +1,8 @@
+Django==1.7.4
+
+### Slow Stuff
+stopit==1.1.0
+
+### Gunicorn
+gunicorn==19.2.1
+gevent==1.0.1

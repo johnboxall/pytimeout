@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+<head>
+    <title>Testing Python Timeouts</title>
+</head>
+<body>
+    <h1>pyTimeout: Limiting function execution in Python</h1>
+    <p>
+        A little experiment at limiting function execution time in the
+        request/response cycle of a Python web server using Django and Gunicorn.
+    </p>
+    <p>
+        <a href="/baseline">
+            Start with the baseline to get a feel for how slow the response
+            could be!
+        </a>
+    </p>
+    <h2>Threading based timeout approaches</h2>
+    <ul>
+        <li><h3><code><a href="/threading.Thread">threading.Thread</a></code></h3></li>
+        <li><h3><code><a href="/threading.Timer">threading.Timer</a></code></h3></li>
+        <li><h3><code><a href="/stopit.ThreadingTimeout">stopit.ThreadingTimeout</a></code></h3></li>
+        <li><h3><code><a href="/gevent.Timeout">gevent.Timeout</a></code></h3></li>
+    </ul>
+
+    <p><a href="https://github.com/johnboxall/pytimeout">pyTimeout Github</a></p>
+</body>
+</html>
